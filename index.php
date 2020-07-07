@@ -167,5 +167,21 @@ if (isset($get['TrackingName'])) {
 
 	<?php endif ?>
 
+	<?php
+		if($get['TrackingName'] === "kaningall"){
+
+			foreach ($nameList as $keyName => $valueTracking) {
+						
+				echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
+
+				$link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking;
+				echo "<br><a href='".$link."' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a>";
+				echo "<p>________________________________________________</p>";
+
+			}
+
+		}
+	?>
+
 </body>
 </html>
