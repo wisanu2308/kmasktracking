@@ -116,10 +116,10 @@ if (isset($get['TrackingName'])) {
 
 <body style="width:80%;margin: auto;">
 
-	<h3 class="text-center">:: Kaning Tracking ::</h3>
+	<h3 class="text-center">🌱❄️ Kaning Tracking 🌱🐺</h3>
 
 	<form action="" method="POST">
-		<label>ค้นหาชื่อ</label>
+		<label> - ค้นหาชื่อ - </label>
 		<input class="form-control" style="display:inline-block" type="text" name="TrackingName" value="<?= $get['TrackingName'] ?>">
 		<p></p>
 		<button class="form-control btn btn-sm btn-success" style="display:inline-block;"><span class="glyphicon glyphicon-search"></span> ค้นหา</button>
