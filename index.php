@@ -110,7 +110,7 @@ if (isset($get['TrackingName'])) {
 				echo "________________________________________________<br><br>";
 				foreach ($resultTracking as $keyName => $valueTracking) {
 					
-					echo "ชื่อ : ".$keyName."<br>"."Tracking : ".$valueTracking;
+					echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
 					echo "<br>________________________________________________<br><br>";
 				}
 
