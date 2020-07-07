@@ -1,7 +1,7 @@
 <?php 
 
 error_reporting(0);
-$get = $_GET;
+$get = $_POST;
 $resultTracking = array();
 
 if (isset($get['TrackingName'])) {
@@ -36,14 +36,14 @@ if (isset($get['TrackingName'])) {
 
 <body>
 
-<form action="index.php" method="GET">
+<form action="" method="POST">
 	<label>ค้นหาชื่อ</label>
 	<input type="text" name="TrackingName" value="<?= $get['TrackingName'] ?>">
 	<input type="submit" value="ค้นหา">
 
 </form>
 
-<?php if (count($_GET) > 0): ?>
+<?php if (count($_POST) > 0): ?>
 	
 	<div id="result">
 		
