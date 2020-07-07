@@ -86,12 +86,14 @@ if (isset($get['TrackingName'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kaning Mask Fanart Tracking</title>
+	<title>Kaning Tracking</title>
 </head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body>
+
+<h3>:: Kaning Tracking ::</h3>
 
 <form action="" method="POST">
 	<label>ค้นหาชื่อ</label>
