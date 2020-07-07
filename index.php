@@ -112,7 +112,20 @@ if (isset($get['TrackingName'])) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+<style>
+	.footer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: #6ac3ae;
+		color: #000000;
+		text-align: center;
+	}
+</style>
 
 <body style="width:80%;margin: auto;">
 
@@ -182,6 +195,15 @@ if (isset($get['TrackingName'])) {
 
 		}
 	?>
+
+	<div class="footer">
+		<p></p>
+		<b>Kaning CGM48 Thailand Fanclub</b> <br>
+		<a href="https://web.facebook.com/kaningcgm48thailandfanclub" target="_blank" style="color:#000000"><i class="fa fa-facebook-square"></i> Facebook</a> | 
+		<a href="https://www.instagram.com/kaningcgm48thfc/" target="_blank" style="color:#000000"><i class="fa fa-twitter-square"></i> Twitter </a> | 
+		<a href="https://twitter.com/kaningcgm48thfc" target="_blank" style="color:#000000"><i class="fa fa-instagram"></i> Instagram</a>
+		<p></p>
+	</div>
 
 </body>
 </html>
