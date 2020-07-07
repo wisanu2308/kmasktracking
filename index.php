@@ -10,7 +10,7 @@ if (isset($get['TrackingName'])) {
 
 	$nameList = [
 		'test' => 'ฮั่นแน่~~',
-		'แอดกัส' => 'รักคนิ้งมากๆ',
+		'แอดกัส' => 'โดนพี่ฟอร์ตกแล้วนะ',
 		'นายอัษฎา_เบิกไพร' => 'EE000000000TH',
 		'พิชญุตม์_ธงศิริ' => 'EE000000000TH',
 		'ชยุตพงศ์_ชุมนวน' => 'EE000000000TH',
@@ -90,44 +90,47 @@ if (isset($get['TrackingName'])) {
 	<title>Kaning Tracking</title>
 </head>
 
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 
 <body>
 
-<h3>:: Kaning Tracking ::</h3>
+	<h3 class="text-center">:: Kaning Tracking ::</h3>
 
-<form action="" method="POST">
-	<label>ค้นหาชื่อ</label>
-	<input type="text" name="TrackingName" value="<?= $get['TrackingName'] ?>">
-	<input type="submit" value="ค้นหา">
+	<form action="" method="POST">
+		<label>ค้นหาชื่อ</label>
+		<input class="form-control" style="display:inline-block" type="text" name="TrackingName" value="<?= $get['TrackingName'] ?>">
+		<button class="form-control btn btn-sm btn-success" style="display:inline-block"><span class="glyphicon glyphicon-search"></span> ค้นหา</button>
 
-</form>
-
-<?php if (count($_POST) > 0): ?>
+	</form>
 	
-	<div id="result">
+	<?php if (count($_POST) > 0): ?>
 		
-		<?php 
+		<div class="" id="result">
+			
+			<?php 
 
-			if (count($resultTracking) > 0) {
-				echo "________________________________________________<br><br>";
-				foreach ($resultTracking as $keyName => $valueTracking) {
-					
-					echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
+				if (count($resultTracking) > 0) {
+					echo "________________________________________________<br><br>";
+					foreach ($resultTracking as $keyName => $valueTracking) {
+						
+						echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
+						echo "<br>________________________________________________<br><br>";
+					}
+
+				} else {
+					echo "________________________________________________<br><br>";
+					echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
 					echo "<br>________________________________________________<br><br>";
 				}
+			?>
 
-			} else {
-				echo "________________________________________________<br><br>";
-				echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
-				echo "<br>________________________________________________<br><br>";
-			}
-		?>
+		</div>
 
-	</div>
-
-<?php endif ?>
-
+	<?php endif ?>
 
 </body>
 </html>
