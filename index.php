@@ -116,7 +116,7 @@ if (isset($get['TrackingName'])) {
 
 <body style="width:80%;margin: auto;">
 
-	<h3 class="text-center">🌱❄️ Kaning Tracking 🌱🦊</h3>
+	<h3 class="text-center">❄️🌱 Kaning Tracking 🌱🦊</h3>
 
 	<form action="" method="POST">
 		<label> - ค้นหาชื่อ - </label>
