@@ -87,7 +87,7 @@ if (isset($get['TrackingName'])) {
 		'นราสิริ​_ยงใย' => 'EE000000000TH',
 	];
 
-	if(utf8_strlen($get['TrackingName']) > 3){
+	if(utf8_strlen($get['TrackingName']) >= 3){
 		
 		foreach ($nameList as $keyName => $valueTracking) {
 
@@ -146,7 +146,7 @@ if (isset($get['TrackingName'])) {
 
 				} else {
 
-					if(utf8_strlen($get['TrackingName']) > 3){
+					if(utf8_strlen($get['TrackingName']) >= 3){
 
 						echo "<p>________________________________________________</p>";
 						echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
