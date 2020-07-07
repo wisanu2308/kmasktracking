@@ -1,6 +1,20 @@
 <?php 
 
 error_reporting(0);
+
+function utf8_strlen($s) {
+    
+	$c = strlen($s); 
+	$l = 0;
+	for ($i = 0; $i < $c; ++$i) {
+		if ((ord($s[$i]) & 0xC0) !== 0x80) {
+			$l++;
+		}
+	}
+	return $l;
+
+}
+
 $get = $_POST;
 $resultTracking = array();
 
@@ -72,12 +86,15 @@ if (isset($get['TrackingName'])) {
 		'นราสิริ​_ยงใย' => 'EE000000000TH',
 	];
 
+	if(utf8_strlen($get['TrackingName']) > 3){
+		
+		foreach ($nameList as $keyName => $valueTracking) {
 
-	foreach ($nameList as $keyName => $valueTracking) {
-
-		if (strpos($keyName, $get['TrackingName']) !== false) {
-			$resultTracking[$keyName] = $valueTracking;
+			if (strpos($keyName, $get['TrackingName']) !== false) {
+				$resultTracking[$keyName] = $valueTracking;
+			}
 		}
+
 	}
 
 }
@@ -96,35 +113,48 @@ if (isset($get['TrackingName'])) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 
-<body>
+<body style="width:80%;margin: auto;">
 
 	<h3 class="text-center">:: Kaning Tracking ::</h3>
 
 	<form action="" method="POST">
 		<label>ค้นหาชื่อ</label>
 		<input class="form-control" style="display:inline-block" type="text" name="TrackingName" value="<?= $get['TrackingName'] ?>">
-		<button class="form-control btn btn-sm btn-success" style="display:inline-block"><span class="glyphicon glyphicon-search"></span> ค้นหา</button>
+		<p></p>
+		<button class="form-control btn btn-sm btn-success" style="display:inline-block;"><span class="glyphicon glyphicon-search"></span> ค้นหา</button>
 
 	</form>
 	
 	<?php if (count($_POST) > 0): ?>
 		
-		<div class="" id="result">
+		<div class="text-center">
 			
 			<?php 
 
 				if (count($resultTracking) > 0) {
-					echo "________________________________________________<br><br>";
+					echo "<p>________________________________________________</p>";
 					foreach ($resultTracking as $keyName => $valueTracking) {
 						
 						echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
-						echo "<br>________________________________________________<br><br>";
+						echo "<p>________________________________________________</p>";
 					}
 
 				} else {
-					echo "________________________________________________<br><br>";
-					echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
-					echo "<br>________________________________________________<br><br>";
+
+					if(utf8_strlen($get['TrackingName']) > 3){
+
+						echo "<p>________________________________________________</p>";
+						echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
+						echo "<p>________________________________________________</p>";
+
+					} else {
+
+						echo "<p>________________________________________________</p>";
+						echo "ข้อมูลไม่เพียงพอ กรุณาลองใหม่อีกครั้ง";
+						echo "<p>________________________________________________</p>";
+
+					}
+					
 				}
 			?>
 
