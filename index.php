@@ -196,6 +196,8 @@ if (isset($get['TrackingName'])) {
 		}
 	?>
 
+	<br><br><br>
+
 	<div class="footer">
 		<p></p>
 		<b>Kaning CGM48 Thailand Fanclub</b> <br>
