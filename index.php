@@ -24,8 +24,9 @@ if (isset($get['TrackingName'])) {
 
 	$nameList = [
 		'test' => 'ฮั่นแน่~~',
+		'ทดสอบ' => 'EI878824259TH',
 		'แอดกัส' => 'โดนพี่ฟอร์ตกแล้วนะ',
-		'นายอัษฎา_เบิกไพร' => 'EE000000000TH',
+		'นายอัษฎา_เบิกไพร' => 'EI878824259TH',
 		'พิชญุตม์_ธงศิริ' => 'EE000000000TH',
 		'ชยุตพงศ์_ชุมนวน' => 'EE000000000TH',
 		'ธนกฤต_ธนามี' => 'EE000000000TH',
@@ -136,7 +137,11 @@ if (isset($get['TrackingName'])) {
 					foreach ($resultTracking as $keyName => $valueTracking) {
 						
 						echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
+
+						$link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking;
+						echo "<br><a href='".$link."' class='btn btn-xs btn-info' style='color:white;'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a>";
 						echo "<p>________________________________________________</p>";
+
 					}
 
 				} else {
