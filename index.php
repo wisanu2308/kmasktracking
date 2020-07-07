@@ -36,7 +36,7 @@ if (isset($get['TrackingName'])) {
 
 <body>
 
-<form action="tracking.php" method="GET">
+<form action="index.php" method="GET">
 	<label>ค้นหาชื่อ</label>
 	<input type="text" name="TrackingName" value="<?= $get['TrackingName'] ?>">
 	<input type="submit" value="ค้นหา">
@@ -58,7 +58,9 @@ if (isset($get['TrackingName'])) {
 				}
 
 			} else {
+				echo "________________________________________________<br><br>";
 				echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
+				echo "<br>________________________________________________<br><br>";
 			}
 		?>
 
