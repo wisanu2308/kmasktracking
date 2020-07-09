@@ -147,7 +147,7 @@ if (isset($get['TrackingName'])) {
 			<?php if (count($resultTracking) > 0) { ?>
 
 			<br>
-			<table class="table table-hover table-condensed" align="center" style="width:70%;">
+			<table class="table table-hover table-condensed" align="center" style="width:90%;">
 				<tr>
 					<th style="text-align:center;">ชื่อ</th>
 					<th style="text-align:center;">Tracking</th>
@@ -182,7 +182,7 @@ if (isset($get['TrackingName'])) {
 	<?php if($get['TrackingName'] === "kaningall"){ ?>
 
 			<br>
-			<table class="table table-hover table-condensed" align="center" style="width:70%;">
+			<table class="table table-hover table-condensed" align="center" style="width:90%;">
 				<tr>
 					<th style="text-align:center;">ชื่อ</th>
 					<th style="text-align:center;">Tracking</th>
