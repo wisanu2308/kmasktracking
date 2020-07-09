@@ -147,20 +147,20 @@ if (isset($get['TrackingName'])) {
 			<?php if (count($resultTracking) > 0) { ?>
 
 			<br>
-			<table class="table table-hover table-condensed" align="center" style="width:90%;">
+			<table class="table table-hover table-condensed" align="center" style="width:100%;">
 				<tr>
-					<th style="text-align:center;">ชื่อ</th>
+					<th style="text-align:center;">ชื่อผู้รับ</th>
 					<th style="text-align:center;">Tracking</th>
 					<th style="text-align:center;">รายละเอียด</th>
 				</tr>
 
 				<?php foreach ($resultTracking as $keyName => $valueTracking) : ?>
 					<tr>
-						<td align="center"><?= str_replace("_", " ", $keyName); ?></td>
-						<td align="center"><?= $valueTracking; ?></td>
+						<td astyle="text-align:center;"><?= str_replace("_", " ", $keyName); ?></td>
+						<td astyle="text-align:center;"><?= $valueTracking; ?></td>
 
 						<?php $link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking; ?>
-						<td align="center"><a href='<?= $link ?>' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a></td>
+						<td astyle="text-align:center;"><a href='<?= $link ?>' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a></td>
 					</tr>
 				<?php endforeach; ?>
 
@@ -182,20 +182,20 @@ if (isset($get['TrackingName'])) {
 	<?php if($get['TrackingName'] === "kaningall"){ ?>
 
 			<br>
-			<table class="table table-hover table-condensed" align="center" style="width:90%;">
+			<table class="table table-hover table-condensed" align="center" style="width:100%;">
 				<tr>
-					<th style="text-align:center;">ชื่อ</th>
+					<th style="text-align:center;">ชื่อผู้รับ</th>
 					<th style="text-align:center;">Tracking</th>
 					<th style="text-align:center;">รายละเอียด</th>
 				</tr>
 
 				<?php foreach ($nameList as $keyName => $valueTracking): ?>
 					<tr>
-						<td align="center"><?= str_replace("_", " ", $keyName); ?></td>
-						<td align="center"><?= $valueTracking; ?></td>
+						<td style="text-align:center;"><?= str_replace("_", " ", $keyName); ?></td>
+						<td style="text-align:center;"><?= $valueTracking; ?></td>
 
 						<?php $link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking; ?>
-						<td align="center"><a href='<?= $link ?>' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a></td>
+						<td style="text-align:center;"><a href='<?= $link ?>' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a></td>
 					</tr>
 				<?php endforeach; ?>
 
