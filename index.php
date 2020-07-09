@@ -144,58 +144,63 @@ if (isset($get['TrackingName'])) {
 		
 		<div class="text-center">
 			
-			<?php 
+			<?php if (count($resultTracking) > 0) { ?>
 
-				if (count($resultTracking) > 0) {
-					echo "<p>________________________________________________</p>";
-					foreach ($resultTracking as $keyName => $valueTracking) {
-						
-						echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
+			<br>
+			<table class="table table-hover table-condensed" align="center" style="width:70%;">
+				<tr>
+					<th style="text-align:center;">ชื่อ</th>
+					<th style="text-align:center;">Tracking</th>
+					<th style="text-align:center;">รายละเอียด</th>
+				</tr>
 
-						$link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking;
-						echo "<br><a href='".$link."' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a>";
-						echo "<p>________________________________________________</p>";
+				<?php foreach ($resultTracking as $keyName => $valueTracking) : ?>
+					<tr>
+						<td align="center"><?= str_replace("_", " ", $keyName); ?></td>
+						<td align="center"><?= $valueTracking; ?></td>
 
-					}
+						<?php $link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking; ?>
+						<td align="center"><a href='<?= $link ?>' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a></td>
+					</tr>
+				<?php endforeach; ?>
 
-				} else {
+			</table>
 
+			<?php } else { 
+				
 					if(utf8_strlen($get['TrackingName']) >= 3){
-
-						echo "<p>________________________________________________</p>";
-						echo "ไม่พบข้อมูล กรุณาติดต่อทางเพจ";
-						echo "<p>________________________________________________</p>";
-
+						echo "<br><h4>ไม่พบข้อมูล กรุณาติดต่อทางเพจ</h4>";
 					} else {
-
-						echo "<p>________________________________________________</p>";
-						echo "ข้อมูลไม่เพียงพอ กรุณาลองใหม่อีกครั้ง";
-						echo "<p>________________________________________________</p>";
-
-					}
-					
+						echo "<br><h4>ข้อมูลไม่เพียงพอ กรุณาลองใหม่อีกครั้ง</h4>";
+					}	
 				}
 			?>
-
 		</div>
 
 	<?php endif ?>
 
-	<?php
-		if($get['TrackingName'] === "kaningall"){
+	<?php if($get['TrackingName'] === "kaningall"){ ?>
 
-			foreach ($nameList as $keyName => $valueTracking) {
-						
-				echo "ชื่อ : ".str_replace("_", " ", $keyName)."<br>"."Tracking : ".$valueTracking;
+			<br>
+			<table class="table table-hover table-condensed" align="center" style="width:70%;">
+				<tr>
+					<th style="text-align:center;">ชื่อ</th>
+					<th style="text-align:center;">Tracking</th>
+					<th style="text-align:center;">รายละเอียด</th>
+				</tr>
 
-				$link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking;
-				echo "<br><a href='".$link."' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a>";
-				echo "<p>________________________________________________</p>";
+				<?php foreach ($nameList as $keyName => $valueTracking): ?>
+					<tr>
+						<td align="center"><?= str_replace("_", " ", $keyName); ?></td>
+						<td align="center"><?= $valueTracking; ?></td>
 
-			}
+						<?php $link = "https://track.thailandpost.co.th/?trackNumber=".$valueTracking; ?>
+						<td align="center"><a href='<?= $link ?>' class='btn btn-xs btn-info' style='color:white;' target='_blank'> <span class='glyphicon glyphicon-send'></span> รายละเอียด</a></td>
+					</tr>
+				<?php endforeach; ?>
 
-		}
-	?>
+			</table>
+	<?php } ?>
 
 	<br><br><br>
 
