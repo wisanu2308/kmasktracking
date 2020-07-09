@@ -91,11 +91,9 @@ if (isset($get['TrackingName'])) {
 		
 		foreach ($nameList as $keyName => $valueTracking) {
 
-			$TrackingName = explode(" ",$get['TrackingName']);
-			foreach($TrackingName as $key => $getTrackingName){
-				if (strpos($keyName, $getTrackingName) !== false) {
-					$resultTracking[$keyName] = $valueTracking;
-				}
+			$NameWithSpace = str_replace("_", " ", $keyName);
+			if (strpos($NameWithSpace, $get['TrackingName']) !== false) {
+				$resultTracking[$keyName] = $valueTracking;
 			}
 		}
 
