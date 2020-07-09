@@ -91,8 +91,11 @@ if (isset($get['TrackingName'])) {
 		
 		foreach ($nameList as $keyName => $valueTracking) {
 
-			if (strpos($keyName, $get['TrackingName']) !== false) {
-				$resultTracking[$keyName] = $valueTracking;
+			$TrackingName = explode(" ",$get['TrackingName']);
+			foreach($TrackingName as $key => $getTrackingName){
+				if (strpos($keyName, $getTrackingName) !== false) {
+					$resultTracking[$keyName] = $valueTracking;
+				}
 			}
 		}
 
